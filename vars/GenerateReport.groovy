@@ -42,7 +42,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : groupedRecordMap.entrySet()) {
 		passedEnvList = passedRecord.stream().map({mp -> mp.get("Environment")}).collect(Collectors.joining("|"));
 	}
 	if (failedRecord != null && failedRecord.size() > 0) {
-		failedEnvList = failedRecord.stream().map({mp -> mp.get("Status")}).collect(Collectors.joining("|"));
+		failedEnvList = failedRecord.stream().map({mp -> mp.get("Environment")}).collect(Collectors.joining("|"));
 	}
 	
 	List<CSVRecord> prod = recordList.stream().filter({f -> f.get("Environment").contains("PROD")}).collect(Collectors.toList());
